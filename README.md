@@ -30,5 +30,3 @@ Personal contact information - other than business contact like LinkedIn
 International shipping options (as I am not a store lol)
 Biased personal opinions
 Political books
-
-UPDATE:
