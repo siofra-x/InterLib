@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='favourites.css') }}">
+{% endblock %} 
+
+{% block body %}
+    <h1>My Favourites</h1>
+    <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th style="border: none !important; background-color: transparent !important;"></th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Price</th>
+                    <th style="border: none !important; background-color: transparent !important;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td style="border: none;">
+                        <img src="{{ book['Cover_url'] }}" alt="{{ book['Title'] }} Cover" style="height: 115px; width: 90px;">
+                    </td>
+                    <td>{{ book['Title'] }}</td>
+                    <td>{{ book['Genre'] }}</td>
+                    <td>${{ book['Price'] }}</td>
+                    <td style="border: none;">
+                        <a href="/remove-from-favourites?book_id={{ book['BookId'] }}">Remove from Favourites</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% if not books %}
+                <tr>
+                    <td colspan="6" style="text-align: center;">No books currently favourited</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %} 

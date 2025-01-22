@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='library.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %} 
+
+{% block body %}
+    <h1>Browse</h1>
+    <div class="content" style="margin-bottom: 5%;">
+        <label for="currency-filter">Filter by Currency:</label>
+        <select id="currency-filter" onchange="filterTable()">
+            <option value="all">All Currencies</option>
+            <option value="$">USD ($)</option>
+            <option value="€">EUR (€)</option>
+            <option value="£">GBP (£)</option>
+            <option value="₩">KRW (₩)</option>
+        </select>
+        <table>
+            <tr>
+                <th style="border: none !important; background-color: transparent !important;"></th>
+                <th>Title</th>
+                <th>Language</th>
+                <th>Genre</th>
+                <th>Price</th>
+                <th>Purchase URL</th>
+                <th style="border: none !important; background-color: transparent !important;"></th>
+            </tr>
+            {% for book in books %}
+            <tr data-currency="{{ book['Symbol'] }}" data-book-id="{{ book['BookId'] }}">
+                <td style="border: none;">
+                    <img src="{{ book['Cover_url'] }}" alt="{{ book['Title'] }} Cover" style="height: 115px; width: 90px;">
+                </td>
+                <td class="editable">{{ book['Title'] }}</td>
+                <td class="editable">{{ book['Language'] }}</td>
+                <td>{{ book['Genre'] }}</td>
+                <td class="editable">{{ book['Symbol'] }}{{ book['Price'] }}</td>
+                <td class="editable url"><a href="{{ book['Purchase_url'] }}" target="_blank">Buy Now</a></td>
+                <td style="border: none;">
+                    <div class="icon-wrapper" style="cursor: pointer;" onclick="addToFavourites({{ book['BookId'] | tojson }})">
+                        <i class="fas fa-heart"></i>
+                        <span>Add to favourites</span>
+                    </div>
+                </td>
+                {% if session['user_id'] == 1 %}
+                <td style="border: none;">
+                    |
+                    <a href="/remove-from-books?book_id={{ book['BookId'] }}" style="color: inherit; text-decoration: none;">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                    |
+                </td>
+                <td style="border: none;">
+                    |
+                        <a href="#" onclick="makeRowEditable(this.closest('tr'))" style="color: inherit; text-decoration: none;">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                    |
+                </td>
+                {%  endif %}
+                </tr>
+                {% endfor %}
+                {% if not books %}
+            <tr>
+                <td colspan="4">No books in stock</td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+
+{% endblock %} 

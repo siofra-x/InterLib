@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='add-books.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="add">
+        <form action="/add-books" method="POST" class="form-container">
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+            <label for="title">Title:<span class="required"></span></label> 
+            <input type="text" name="title" required>
+
+            <label for="genre">Genre: <span class="required">*</span></label>
+            <select id="genre" name="genre_id" required>
+                <option value="" disabled selected>Select a genre</option>
+                <option value="1">Fiction</option>
+                <option value="2">Non-fiction</option>
+                <option value="3">Fantasy</option>
+                <option value="4">Science Fiction</option>
+                <option value="5">Romance</option>
+                <option value="6">Horror</option>
+                <option value="7">Thriller</option>
+                <option value="8">Historical</option>
+                <option value="9">Mystery/Crime</option>
+                <option value="10">Adventure/Action</option>
+                <option value="11">Poetry</option>
+                <option value="12">Drama</option>
+                <option value="13">Literature</option>
+            </select>
+
+            <label for="price">Price: <span class="required"></span></label>  
+            <input type="number" name="price" step=".01" required>
+
+            <label for="currency">Currency: <span class="required">*</span></label>
+            <select id="currency_id" name="currency_id" required>
+                <option value="" disabled selected>Select a currency</option>
+                <option value="1">Euro</option>
+                <option value="2">US Dollar</option>
+                <option value="3">Pound Sterling</option>
+                <option value="4">South Korean Won</option>
+            </select>
+
+            <label for="author">Author: <span class="required"></span></label>  
+            <input type="text" name="author" required>
+
+            <label for="seriesname">Series Name: <span class="required"></span></label>  
+            <input type="text" name="seriesname">
+
+            <label for="isbn">ISBN: <span class="required"></span></label>  
+            <input type="number" name="isbn" required>
+
+            <label for="country">Country: <span class="required"></span></label>   
+            <input type="text" name="country" required>
+
+            <label for="language">Language: <span class="required"></span></label>   
+            <input type="text" name="language" required>
+
+            <label for="blurb">Blurb: <span class="required"></span></label>   
+            <input type="text" name="blurb">
+
+            <label for="coverurl">Cover URL: <span class="required"></span></label>   
+            <input type="url" name="coverurl" required>
+
+            <label for="purchaseurl">Purchase URL: <span class="required"></span></label>   
+            <input type="url" name="purchaseurl" required>
+
+            <button type="submit" class="signup-button">Add Book</button>
+        </form>
+    </div>
+{% endblock %}

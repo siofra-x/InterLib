@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>InterLib</title>
+        <div class="topbarnav" style="margin-bottom: 50px;">
+            <div class="topnav">
+                <a class="active" href="/">Home</a>
+                <a href="/library">Library</a>
+                {% if session['user_id'] %}
+                <a href="/favourites">Favourites</a>
+                {% endif %}
+                <a href="/about">About Me</a>
+                {% if session['user_id'] == 1 %}
+                <a href="/add-books">Add Books</a>
+                {% endif %}
+                {% if not session['user_id'] %}
+                <a href="/login">Log In</a>
+                {% endif %}
+                {% if session['user_id']%}
+                <a href="/logout" style="position: absolute; right: 5px;">Log out</a>
+                {% endif %}
+            </div>
+        </div>
+        {% if session['username'] %}
+        <p>Welcome, {{ session['username'] }}</p>
+        {% else %}
+        <p>Please log in</p>
+        {% endif %}
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        <div class="footer">
+            <p>Copyright &copy; 2025 by Sofia Morena Stanciu Crainic </p>
+        </div>
+    </body>
+</html>
+
+

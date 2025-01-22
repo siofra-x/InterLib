@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+{% endblock %} 
+
+{% block body %}
+    <title>About</title>
+    <img src="../static/sofia.jpg" alt="sofia" class="image-left" width="200">
+    <h1>About The Creator</h1>
+
+    <p> My name is Sofia Morena Stanciu Crainic, I was born in Romania, and emigrated when I was only 5 to the United Arab Emirates.
+    I did all of my primary and secondary education in in a small town called Al Ain, Abu Dhabi.
+    Once I graduated in 2021, I packed my bags and moved to the Netherlands on my own to pursue higher education.
+    My journey first began at the Zuyd University of Applied Sciences, studying Hotel Management in Maastricht, where after a year and a half of being there, I quit.
+    It was a difficult decision that led me on the right path to studying International Business, which aligned more with my needs and want in the future.
+    Now I'm in my second year, finishing this minor with this project website, and going on to start my internship at Bayer. 
+    </p>
+
+    <h2>Why Interlib? </h2>
+    <p>I was inspired by my love of reading books and the beginning of my minor journey with Creative Programming for Non-IT Students (CPNITS) from NHL Stenden. 
+    As I am an International Business student, I wanted to bring international book lovers together to one place to explore what could be their favourite books in different languages! They are also able to see where the books are from as well as their average price and where they can purchase it.
+    </p>
+    
+    <div style="display: ruby;"> 
+        <a href="https://www.linkedin.com/in/sofia-morena-stanciu-crainic/" style="margin-right: 5px;"><h3>LinkedIn</h3></a><i class="fa-brands fa-linkedin"></i>  
+    </div>
+    
+{% endblock %} 
