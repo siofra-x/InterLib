@@ -1,0 +1,19 @@
+table {
+    border-collapse: separate;
+    border-spacing: 15px;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ECB390; /* Optional: Adds light borders for clarity */
+}
+
+th {
+    background-color: #ECB390; /* Light background for header */
+}
+
+img {
+    border-radius: 4px; /* Rounded corners for book covers */
+}

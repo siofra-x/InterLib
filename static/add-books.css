@@ -1,0 +1,85 @@
+.add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FEF9E1;
+    padding: 20px;
+}
+
+/* Styling the form */
+.form-container {
+    display: grid;
+    gap: 20px; /* Adds spacing between form elements */
+    max-width: 400px; /* Restricts the form's width */
+    width: 100%; /* Ensures responsiveness */
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin-bottom: 60px;
+}
+
+/* Styling labels and required indicator */
+.form-container label {
+font-weight: bold;
+margin-bottom: 20px;
+display: flex;
+justify-content: column;
+font-size: 15px;
+}
+
+.form-container .required {
+color: red;
+margin-left: 5px;
+font-size: 14px;
+}
+
+/* Required indicator */
+.form-container .required {
+    color: red;
+    margin-left: 2px;
+    font-size: 14px;
+}
+
+/* Input fields */
+.form-container input, .form-container select {
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+/* Focus effect on input fields */
+.form-container input:focus, .form-container select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Submit button */
+.form-container button {
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Error message styling */
+.error-message {
+color: red;
+font-size: 14px;
+text-align: center;
+margin-bottom: 15px;
+}

@@ -1,0 +1,67 @@
+.icon-wrapper {
+        display: inline-flex; 
+        align-items: center;  
+        position: relative;   
+}
+
+    
+.icon-wrapper i {
+        font-size: 20px; 
+        transition: transform 0.3s ease; 
+}
+
+    
+.icon-wrapper span {
+        visibility: hidden; 
+        font-size: 14px;
+        color: #333;
+        margin-left: 10px; 
+        opacity: 0; 
+        transition: opacity 0.3s ease; 
+}
+
+    
+.icon-wrapper:hover i {
+        transform: scale(1.2); 
+}
+
+    
+.icon-wrapper:hover span {
+        visibility: visible; 
+        opacity: 1; 
+        color: #A31D1D; 
+}
+    
+table {
+    border-collapse: separate;
+    border-spacing: 15px;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ECB390; 
+}
+
+th {
+    background-color: #ECB390; 
+}
+
+img {
+    border-radius: 4px; 
+}
+
+td.editable {
+    max-width: 300px;  /* Adjust to fit your layout */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Prevent wrapping on long text */
+    word-wrap: break-word; /* Optionally break long words */
+}
+    
+/* Optional: for better readability on larger URLs, you can allow wrapping after a certain width */
+td.editable.url {
+    white-space: normal; /* Allows word wrapping */
+    word-wrap: break-word; /* Breaks the word into multiple lines if necessary */
+}

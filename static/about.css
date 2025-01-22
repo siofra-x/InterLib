@@ -1,0 +1,26 @@
+body {
+    font-family: Garamond, serif;
+    background-color: #FEF9E1;
+    color: #6D2323;
+    margin-top: 60px;
+    text-align: justify;
+    text-justify:auto;
+}
+
+img{
+    width: 200px;
+    height: 300px;
+}
+
+img{
+    border: 5px solid #A75D5D;
+}
+
+.image-left {
+    float: left;
+    margin-right: 15px;
+}
+
+div {
+    float:left
+}

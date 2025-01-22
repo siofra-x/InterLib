@@ -1,0 +1,83 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FEF9E1;
+    padding: 20px;
+}
+
+/* Styling the form */
+.form-container {
+display: grid;
+gap: 15px; /* Adds spacing between form elements */
+width: 300px; /* Set a consistent form width */
+background: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling labels and required indicator */
+.form-container label {
+font-weight: bold;
+margin-bottom: 5px;
+display: flex;
+justify-content: space-between;
+font-size: 14px;
+}
+
+
+/* Styling labels and required indicator */
+.form-container label {
+font-weight: bold;
+margin-bottom: 5px;
+display: flex;
+justify-content: space-between;
+font-size: 14px;
+}
+
+.form-container .required {
+color: red;
+margin-left: 5px;
+font-size: 14px;
+}
+
+/* Input fields */
+.form-container input {
+padding: 8px 10px;
+font-size: 14px;
+border: 1px solid #ddd;
+border-radius: 4px;
+transition: border-color 0.3s;
+width: 100%;
+}
+
+.form-container input:focus {
+border-color: #007BFF;
+outline: none;
+}
+
+/* Button styling */
+.login-button {
+padding: 10px 15px;
+font-size: 16px;
+background-color: #DF7861;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+background-color: #9A3B3B;
+}
+
+/* Error message styling */
+.error-message {
+color: red;
+font-size: 14px;
+text-align: center;
+margin-bottom: 15px;
+}
