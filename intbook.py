@@ -16,7 +16,8 @@ def intbook_db():
             ISBN INT NOT NULL,
             Country CHAR(200) NOT NULL,
             Language CHAR(200) NOT NULL,
-            Blurb CHAR(200) NOT NULL,
+            Blurb CHAR(200),
+            Purchase_url CHAR(300) NOT NULL,
             Cover_url CHAR(300) NOT NULL,
             FOREIGN KEY (GenreId) REFERENCES Genre(GenreId),
             FOREIGN KEY (CurrencyId) REFERENCES Currency(CurrencyId)
@@ -31,7 +32,7 @@ def intbook_db():
 
         cursor.execute('''CREATE TABLE IF NOT EXISTS Users (
             UserId INTEGER PRIMARY KEY AUTOINCREMENT,
-            Username VARCHAR(50) NOT NULL,
+            Username VARCHAR(50) UNIQUE NOT NULL,
             Password VARCHAR(50) NOT NULL,
             Email CHAR(50) NOT NULL,
             Origin_country CHAR(50) NOT NULL
@@ -75,7 +76,7 @@ def intbook_db():
         (1, "Euro", "€"),
         (2, "US Dollar", "$"),
         (3, "Pound Sterling", "£"),
-        (4, "Chinese Yuan", "¥");
+        (4, "South Korean Won", "₩");
         ''')
 
         cursor.execute('''INSERT INTO Books(BookId, GenreId, CurrencyId, Price, Title, Author, Series_name, ISBN, Country, Language, Blurb, Cover_url)
